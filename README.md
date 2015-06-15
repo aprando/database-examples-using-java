@@ -14,6 +14,19 @@
   * http://dev.mysql.com/downloads/mysql/
   * http://dev.mysql.com/downloads/windows/
 
+## Resumo rápido
+* **Exemplo 1** - Linguagem Java sem frameworks, com uma cadamda DAO realizando o acesso ao banco utilizando espeficificação JDBC. Programa simples com uma classe de ativação main para chamada ao DAO.
+* **Exemplo 2** - Sistema Web MVC Java utilizando framwork Spring, com uma camada DAO realizando o acesso ao banco utilizando espeficificação JDBC. 
+* **Exemplo 3** -  Sistema Web MVC Java utilizando framwork Spring, com uma camada DAO utilizando o framework JPA + Hibernate.
+
+## Conceitos básicos
+* **Design Patterns**: é uma solução geral reutilizável para um problema que ocorre com frequência dentro de um determinado contexto.
+* **Frameworks:** é uma implementação utilizada para resolver um problema comum podendo ser reutilizada em diferentes projetos.
+* **DAO:** Data Access Object é um padrão para persistência de dados que permite separar regras de negócio das regras de acesso a banco de dados.
+* **MVC:** Model-view-controller é um padrão de arquitetura de software que separa as camadas de apresentação e negócio por um controlador com o intuito de separar responsabilidades e tornar o código coeso e reutilizável.
+* **Pool de conexões:** ...
+* **Servidor de aplicação:** ...
+
 ## Como importar os exemplos no Eclipse
 1. Descompactar exemplos em um diretório físico (que será utilizado como WORKSPACE)
 2. Abrir o eclipse e escolher a pasta que os projetos foram descompactados.
