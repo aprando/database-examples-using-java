@@ -10,6 +10,7 @@ boxes/*
 /vagrant-spec.config.rb
 
 *.class
+/target/
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
