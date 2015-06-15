@@ -20,12 +20,13 @@
 * **Exemplo 3** -  Sistema Web MVC Java utilizando framework Spring, com uma camada DAO utilizando o framework JPA + Hibernate.
 
 ## Conceitos básicos
-* **Design Patterns**: é uma solução geral reutilizável para um problema que ocorre com frequência dentro de um determinado contexto.
-* **Frameworks:** é uma implementação utilizada para resolver um problema comum podendo ser reutilizada em diferentes projetos.
+* **Connection:** cada vez que uma aplicação abre uma conexão com um banco de dados é criado um objeto do tipo Connection na memória. Esse objeto se comunicará com o servidor de banco de dados, e este por sua vez alocará recursos de instância de forma dedicada para aquela conexão, repetindo-se cada vez que a conexão for iniciada.
+* **Pool de conexões:** é uma coleção com várias conexões com o banco de dados, almejando solucionar um possível gargalo na quantidade de conexões necessárias para as aplicações, pois através dessa técnica cada sessão consumirá  apenas uma conexão já existe com o banco de dados. Em um ambiente JEE, geralmente o pool de conexões é gerenciando pelo sevidor de aplicações.
+* **Design Patterns:** é uma solução geral reutilizável para um problema que ocorre com frequência dentro de um determinado contexto.
+* **Frameworks:** é uma implementação funcional e reutilização desenvolvida em qualquer linguagem utilizada para resolver um problema comum entre projetos.
 * **DAO:** Data Access Object é um padrão para persistência de dados que permite separar regras de negócio das regras de acesso a banco de dados.
 * **MVC:** Model-view-controller é um padrão de arquitetura de software que separa as camadas de apresentação e negócio por um controlador com o intuito de separar responsabilidades e tornar o código coeso e reutilizável.
-* **Pool de conexões:** é uma coleção com várias conexões com o banco de dados.
-* **Servidor de aplicação:** é um servidor que disponibiliza um ambiente para a instalação e execução de aplicações
+* **Servidor de aplicação:** é um servidor que disponibiliza um ambiente para a instalação e execução de aplicações.
 
 ## Como importar os exemplos no Eclipse
 1. Descompactar exemplos em um diretório físico (que será utilizado como WORKSPACE)
