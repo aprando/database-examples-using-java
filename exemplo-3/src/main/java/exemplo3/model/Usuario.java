@@ -8,7 +8,7 @@ import javax.persistence.Id;
 
 import org.hibernate.annotations.ManyToAny;
 
-@Entity
+@Entity(name="usuario")
 public class Usuario {
 
 	@Id

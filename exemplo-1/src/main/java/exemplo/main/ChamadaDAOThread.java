@@ -28,7 +28,7 @@ public class ChamadaDAOThread implements Runnable {
 			UsuarioDAO dao = new UsuarioDAO();
 			List<Usuario> usuarios = dao.listarTodos();
 			
-			Thread.sleep(10000);
+			//Thread.sleep(10000);
 			long fim = new Date().getTime();
 			
 			

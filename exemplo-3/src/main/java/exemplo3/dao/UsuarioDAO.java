@@ -19,7 +19,7 @@ public class UsuarioDAO {
 	public List<Usuario> listarTodos() throws Exception {
 		try {
 			TypedQuery<Usuario> q = em.createQuery(
-					"select usu from Usuario usu", Usuario.class);
+					"select usu from usuario usu", Usuario.class);
 			return q.getResultList();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -30,7 +30,7 @@ public class UsuarioDAO {
 	public Usuario consultarPorPK(Long pk) throws Exception {
 		try {
 			TypedQuery<Usuario> q = em.createQuery(
-					"select usu from Usuario usu where usu.id = " + pk,
+					"select usu from usuario usu where usu.id = " + pk,
 					Usuario.class);
 			return q.getSingleResult();
 		} catch (Exception e) {
@@ -45,7 +45,7 @@ public class UsuarioDAO {
 			tx.begin();
 			
 			TypedQuery<Usuario> q = em.createQuery(
-					"select usu from Usuario usu where usu.id = " + pk,
+					"select usu from usuario usu where usu.id = " + pk,
 					Usuario.class);
 			em.remove(q.getSingleResult());
 			

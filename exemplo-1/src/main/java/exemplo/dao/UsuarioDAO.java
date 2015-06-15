@@ -20,7 +20,7 @@ public class UsuarioDAO {
 		try {
 			
 			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/example_schema", "root", "");
+			conn = DriverManager.getConnection("jdbc:mysql://192.168.33.10:3306/example_schema", "root", "root");
 
 			stmt = conn.createStatement();
 			StringBuilder sql = new StringBuilder();

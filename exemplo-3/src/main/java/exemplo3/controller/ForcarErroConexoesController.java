@@ -35,12 +35,14 @@ public class ForcarErroConexoesController extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		try {
 			
-			for (int i = 0; i < 100; i++) {
+			for (int i = 0; i < 5; i++) {
 				System.out.println("Abrindo conexao nr.." + i);
 				Context ctx = new InitialContext();
 				DataSource ds = (DataSource) ctx.lookup("java:/comp/env/jdbc/example");
 				ds.getConnection();
 			}
+			request.getRequestDispatcher("/views/index.jsp").forward(request,
+					response);
 
 		} catch (Exception e) {
 			e.printStackTrace();
