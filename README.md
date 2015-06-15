@@ -15,7 +15,7 @@
   * http://dev.mysql.com/downloads/windows/
 
 ## Resumo rápido
-* **Exemplo 1** - Linguagem Java sem frameworks, com uma cadamda DAO realizando o acesso ao banco utilizando espeficificação JDBC. Programa simples com uma classe de ativação main para chamada ao DAO.
+* **Exemplo 1** - Linguagem Java sem frameworks, com uma camada DAO realizando o acesso ao banco utilizando espeficificação JDBC. Programa simples com uma classe de ativação main para chamada ao DAO.
 * **Exemplo 2** - Sistema Web MVC Java utilizando framework Spring, com uma camada DAO realizando o acesso ao banco utilizando espeficificação JDBC. 
 * **Exemplo 3** -  Sistema Web MVC Java utilizando framework Spring, com uma camada DAO utilizando o framework JPA + Hibernate.
 
