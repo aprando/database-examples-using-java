@@ -1,0 +1,96 @@
+##################################################################
+######################### USEFUL COMMANDS ########################
+##################################################################
+-- Display the database you are using
+db
+show dbs
+show collections
+
+-- Use a database
+use recsysdb
+
+-- Server Status
+db.serverStatus()
+
+-- Script with javascript code... =]
+for (i = 0; i < 5; i++) {
+	db.funcionarios.insert({
+		'matricFunc': 203,
+		'nomeFunc': 'Ester dos Anjos',
+		'cargoFunc': 'presidente',
+		'salarioFunc': '90000'
+	})
+}
+
+###########################################################
+######################### QUERIES #########################
+###########################################################
+db.usuario.find()
+db.usuario.find().pretty()
+
+-- IN clause
+db.deptos.find({ siglaDepto: { $in: [ 'INFO', 'VEND' ] } })
+
+-- AND clause
+db.deptos.find( { siglaDepto: 'INFO', orcamentoGlobalDepto: { $lt: 1 } } )
+
+-- OR clause
+db.deptos.find( { $or: [
+	 { numeroFuncionariosDepto: { $gt: 1 } },
+	 { orcamentoGlobalDepto: { $lt: 800001 } } 
+] } )
+
+-- AND with OR clause
+db.deptos.find(
+   {
+     siglaDepto: 'INFO', 
+	 $or: [
+	 	 { numeroFuncionariosDepto: { $gt: 1 } },
+	 	 { orcamentoGlobalDepto: { $lt: 800001 } } 
+	 ]
+   }
+)
+
+###############################################################
+######################### FULL SCRIPT #########################
+###############################################################
+-- Collection DEPTOS
+db.deptos.insert({'siglaDepto':'INFO', 'nomeDepto': 'Informatica', 'orcamentoGlobalDepto': 2000000,  'numeroFuncionariosDepto': 5})
+db.deptos.insert({'siglaDepto':'VEND', 'nomeDepto': 'vendas', 'orcamentoGlobalDepto': 800000,  'numeroFuncionariosDepto': 1})
+db.deptos.insert({'siglaDepto':'PRES', 'nomeDepto': 'Presidencia', 'orcamentoGlobalDepto': 20000000,  'numeroFuncionariosDepto': 1})
+db.deptos.insert({'siglaDepto':'PESQ', 'nomeDepto': 'Pesquisa e Desenvolvimento', 'orcamentoGlobalDepto': 500000,  'numeroFuncionariosDepto': 0})
+
+-- Collection PROJETOS
+db.projetos.insert({'codProj':'Pxml', 'tituloProj':'Projeto XML', 'orcamento':300000, 'prazoProj':2, 'unidadePrazo':'anos', 'coordProj':220, 'siglaDepto':'INFO'})
+db.projetos.insert({'codProj':'PCMM', 'tituloProj':'Projeto Modelo de Capacitacao para Maturidade', 'orcamento':3000000, 'prazoProj':5, 'unidadePrazo':'anos', 'coordProj':205, siglaDepto:'INFO'})
+db.projetos.insert({'codProj':'PMRH', 'tituloProj':'Projeto Manutencao Sistema RH Folha', 'orcamento':100000, 'prazoProj':6, 'unidadePrazo':'meses', 'coordProj':220, siglaDepto:'INFO'})
+db.projetos.insert({'codProj':'CGP', 'tituloProj':'Companhia de Gerencia de Projeto', 'orcamento':500000, 'prazoProj':5, 'unidadePrazo':'meses', 'coordProj':1, 'siglaDepto':'PRES'})
+db.projetos.insert({'codProj':'SGBD', 'tituloProj':'Novo SGBD PostgreSql', 'orcamento':20000, 'prazoProj':1, 'unidadePrazo':'ano', 'coordProj':230, 'siglaDepto':'PESQ'})
+
+
+-- Collection FUNCIONARIOS
+var projeto =  db.projetos.find({'codProj': 'Pxml'}).next()
+
+db.funcionarios.insert({
+	'matricFunc': 203,
+	'nomeFunc': 'Ester dos Anjos',
+	'cargoFunc': 'presidente',
+	'salarioFunc': 90000, 
+	'projetos': [{
+		'projeto_id': projeto._id,
+		'totalHorasMes': 30,
+	}]}
+)
+
+db.funcionarios.insert({'matricFunc': 202,'nomeFunc': 'Fabio Almeida','cargoFunc': 'analista de sistemas','salarioFunc': '3000'})
+db.funcionarios.insert({'matricFunc': 220,'nomeFunc': 'Angelina Almeida','cargoFunc': 'analista de sistemas','salarioFunc': '3000'})
+db.funcionarios.insert({'matricFunc': 204,'nomeFunc': 'Maria dos Santos','cargoFunc': 'analista de sistemas','salarioFunc': '2500'})
+db.funcionarios.insert({'matricFunc': 205,'nomeFunc': 'Maria dos Santos','cargoFunc': 'analista de sistemas','salarioFunc': '2500'})
+db.funcionarios.insert({'matricFunc': 206,'nomeFunc': 'Gustavo dos Santos','cargoFunc': 'gerente','salarioFunc': '7500'})
+db.funcionarios.insert({'matricFunc': 207,'nomeFunc': 'Luiza Braz Lima','cargoFunc': 'DBA','salarioFunc': '7000'})
+db.funcionarios.insert({'matricFunc': 230,'nomeFunc': 'Debora Pereira','cargoFunc': 'pesquisador1','salarioFunc': '7500'})
+db.funcionarios.insert({'matricFunc': 231,'nomeFunc': 'Fabiola Rodrigues','cargoFunc': 'pesquisador3','salarioFunc': '5000'})
+db.funcionarios.insert({'matricFunc': 233,'nomeFunc': 'Antonio Pereira','cargoFunc': 'pesquisador3','salarioFunc': '5000'})
+db.funcionarios.insert({'matricFunc': 235,'nomeFunc': 'Fernando Lima Barreto','cargoFunc': 'pesquisador2','salarioFunc': '6700'})
+db.funcionarios.insert({'matricFunc': 1,'nomeFunc': 'Severino Cavalcanti','cargoFunc': 'assessor da presidencia','salarioFunc': '7500'})
+db.funcionarios.insert({'matricFunc': 232,'nomeFunc': 'Joana Cavalcanti','cargoFunc': 'auxiliar','salarioFunc': '3000'})

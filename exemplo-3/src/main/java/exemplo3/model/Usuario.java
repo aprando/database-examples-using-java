@@ -21,7 +21,7 @@ public class Usuario {
 	@Column
 	private String email;
 
-	@Column
+	@Column(name='tel_residencial')
 	private Integer telefone;
 
 	

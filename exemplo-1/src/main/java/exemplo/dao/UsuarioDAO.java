@@ -41,9 +41,9 @@ public class UsuarioDAO {
 			e.printStackTrace();
 		} finally {
 			try {
-				//conn.close();
-				//stmt.close();
-				//rs.close();
+//				conn.close();
+//				stmt.close();
+//				rs.close();
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
