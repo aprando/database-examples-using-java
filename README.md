@@ -15,13 +15,13 @@
   * http://dev.mysql.com/downloads/windows/
 
 ## Resumo rápido
-* **Exemplo 1** - Linguagem Java sem frameworks, com uma cadamda DAO realizando o acesso ao banco utilizando espeficificação JDBC. Programa simples com uma classe de ativação main para chamada ao DAO.
+* **Exemplo 1** - Linguagem Java sem frameworks, com uma camada DAO realizando o acesso ao banco utilizando espeficificação JDBC. Programa simples com uma classe de ativação main para chamada ao DAO.
 * **Exemplo 2** - Sistema Web MVC Java utilizando framework Spring, com uma camada DAO realizando o acesso ao banco utilizando espeficificação JDBC. 
 * **Exemplo 3** -  Sistema Web MVC Java utilizando framework Spring, com uma camada DAO utilizando o framework JPA + Hibernate.
 
 ## Conceitos básicos
-* **Connection:** cada vez que uma aplicação abre uma conexão com um banco de dados é criado um objeto do tipo Connection na memória. Esse objeto se comunicará com o servidor de banco de dados, e este por sua vez alocará recursos de instância de forma dedicada para aquela conexão, repetindo-se cada vez que a conexão for iniciada.
-* **Pool de conexões:** é uma coleção com várias conexões com o banco de dados, almejando solucionar um possível gargalo na quantidade de conexões necessárias para as aplicações, pois através dessa técnica cada sessão consumirá  apenas uma conexão já existe com o banco de dados. Em um ambiente JEE, geralmente o pool de conexões é gerenciando pelo sevidor de aplicações.
+* **Connection:** cada vez que uma aplicação abre uma conexão com um banco de dados é criado um objeto do tipo Connection na memória. Esse objeto se comunicará com o servidor de banco de dados, que alocará recursos de forma dedicada para aquela conexão.
+* **Pool de conexões:** é uma coleção com várias conexões com o banco de dados, almejando solucionar um possível gargalo na quantidade de conexões necessárias para as aplicações, pois através dessa técnica cada sessão consumirá conexões já existentes e configuradas previamente. Em um ambiente JEE, o pool de conexões é gerenciando pelo sevidor de aplicações.
 * **Design Patterns:** é uma solução geral reutilizável para um problema que ocorre com frequência dentro de um determinado contexto.
 * **Frameworks:** é uma implementação funcional e reutilização desenvolvida em qualquer linguagem utilizada para resolver um problema comum entre projetos.
 * **DAO:** Data Access Object é um padrão para persistência de dados que permite separar regras de negócio das regras de acesso a banco de dados.
