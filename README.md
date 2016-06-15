@@ -17,7 +17,7 @@
 ## Resumo rápido
 * **Exemplo 1** - Linguagem Java sem frameworks, com uma camada DAO realizando o acesso ao banco utilizando espeficificação JDBC. Programa simples com uma classe de ativação main para chamada ao DAO.
 * **Exemplo 2** - Sistema Web MVC Java utilizando Servlets, com uma camada DAO realizando o acesso ao banco utilizando espeficificação JDBC. 
-* **Exemplo 3** -  Sistema Web MVC Java utilizando framework Spring, com uma camada DAO utilizando o framework JPA + Hibernate.
+* **Exemplo 3** -  Sistema Web MVC Java utilizando Servlets, com uma camada DAO utilizando o framework JPA + Hibernate.
 
 ## Conceitos básicos
 * **Connection:** cada vez que uma aplicação abre uma conexão com um banco de dados é criado um objeto do tipo Connection na memória. Esse objeto se comunicará com o servidor de banco de dados, que alocará recursos de forma dedicada para aquela conexão.
